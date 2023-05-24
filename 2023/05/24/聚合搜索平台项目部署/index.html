@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/#6.0.0-alpha.1'>
+    
+<head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/#6.0.0-alpha.1'>
+  
   <meta name="generator" content="Hexo 6.3.0">
   <meta name="Volantis" content="6.0.0-alpha.1">
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
-  <link rel="canonical" href="https://chen28176.github.io/2023/05/23/hello-world/"/>
+  <link rel="canonical" href="https://chen28176.github.io/2023/05/24/聚合搜索平台项目部署/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -33,19 +35,19 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>Hello World - chen</title>
+  <title>平台部署 - chen</title>
   <meta name="keywords" content="null">
   <meta desc name="description" content="chen - chen28176 - chen">
   
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="https://chen28176.github.io/2023/05/23/hello-world/index.html">
+<meta property="og:title" content="平台部署">
+<meta property="og:url" content="https://chen28176.github.io/2023/05/24/%E8%81%9A%E5%90%88%E6%90%9C%E7%B4%A2%E5%B9%B3%E5%8F%B0%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2/index.html">
 <meta property="og:site_name" content="chen">
-<meta property="og:description" content="代编辑">
+<meta property="og:description" content="项目部署（docker部署）elasticsearch部署 因为我们还需要部署kibana容器，因此需要让elasticsearch和kibana容器互联。这里先创建一个网络：  1docker network create es-net   加载镜像，我用的elasticsearch的7.12.1版本的镜像，镜像放到网盘里了。   链接：https:&#x2F;&#x2F;pan.baidu.com&#x2F;s&#x2F;1WULY">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-<meta property="article:published_time" content="2023-05-23T11:37:58.804Z">
-<meta property="article:modified_time" content="2023-05-23T17:22:06.559Z">
+<meta property="article:published_time" content="2023-05-24T08:28:35.383Z">
+<meta property="article:modified_time" content="2023-05-24T08:28:53.190Z">
 <meta property="article:author" content="chen28176">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
@@ -1995,7 +1997,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1684913094687),
+    lastupdate: new Date(1684917041743),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2042,8 +2044,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <!-- Custom Files headEnd begin-->
   
   <!-- Custom Files headEnd end-->
-</head>
-  <body itemscope itemtype="http://schema.org/WebPage">
+</head>  <body itemscope itemtype="http://schema.org/WebPage">
     <!-- import body_begin begin-->
     <!-- import body_begin end-->
     <!-- Custom Files bodyBegin begin-->
@@ -2138,7 +2139,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       <div class="cover-wrapper post search" id='half'>
         
-  <div class='cover-bg lazyload placeholder' data-bg="https://files.catbox.moe/10cb94.jpg"></div>
+  <div class='cover-bg lazyload placeholder' data-bg="https://files.catbox.moe/d6oahl.jpg"></div>
 
 <div class='cover-body'>
   <div class='top'>
@@ -2170,7 +2171,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
 <div id="l_main" class=''>
   <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
-  <link itemprop="mainEntityOfPage" href="https://chen28176.github.io/2023/05/23/hello-world/">
+  <link itemprop="mainEntityOfPage" href="https://chen28176.github.io/2023/05/24/聚合搜索平台项目部署/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="chen">
   </span>
@@ -2191,7 +2192,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
       <h1 class="title" itemprop="name headline">
-        Hello World
+        平台部署
       </h1>
       <div class='new-meta-box'>
         
@@ -2213,10 +2214,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
         
           
-            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2023-05-23T19:37:58+08:00">
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2023-05-24T16:28:35+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：May 23, 2023</p>
+    <p>发布于：May 24, 2023</p>
   </a>
 </div>
 
@@ -2239,8 +2240,97 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <p>代编辑</p>
+    <h2 id="项目部署（docker部署）"><a href="#项目部署（docker部署）" class="headerlink" title="项目部署（docker部署）"></a>项目部署（docker部署）</h2><h3 id="elasticsearch部署"><a href="#elasticsearch部署" class="headerlink" title="elasticsearch部署"></a>elasticsearch部署</h3><ol>
+<li>因为我们还需要部署kibana容器，因此需要让elasticsearch和kibana容器互联。这里先创建一个网络：</li>
+</ol>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker network create es-net</span><br></pre></td></tr></table></figure>
 
+<ol start="2">
+<li>加载镜像，我用的elasticsearch的7.12.1版本的镜像，镜像放到网盘里了。</li>
+</ol>
+<blockquote>
+<p>链接：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1WULYE5JqDFbulyFypstY8A">https://pan.baidu.com/s/1WULYE5JqDFbulyFypstY8A</a><br>提取码：ldqj </p>
+</blockquote>
+<p>大家将es.tar其上传到服务器上，然后运行命令加载即可：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">导入数据</span></span><br><span class="line">docker load -i es.tar</span><br></pre></td></tr></table></figure>
+
+<p>3.运行docker命令,启动容器</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">docker run -d \</span><br><span class="line">	--name es \</span><br><span class="line">    -e &quot;ES_JAVA_OPTS=-Xms512m -Xmx512m&quot; \</span><br><span class="line">    -e &quot;discovery.type=single-node&quot; \</span><br><span class="line">    -v es-data:/usr/share/elasticsearch/data \</span><br><span class="line">    -v es-plugins:/usr/share/elasticsearch/plugins \</span><br><span class="line">    --privileged \</span><br><span class="line">    --network es-net \</span><br><span class="line">    -p 9200:9200 \</span><br><span class="line">    -p 9300:9300 \</span><br><span class="line">elasticsearch:7.12.1</span><br></pre></td></tr></table></figure>
+
+<p>命令解释：</p>
+<ul>
+<li><code>-e &quot;cluster.name=es-docker-cluster&quot;</code>：设置集群名称</li>
+<li><code>-e &quot;http.host=0.0.0.0&quot;</code>：监听的地址，可以外网访问</li>
+<li><code>-e &quot;ES_JAVA_OPTS=-Xms512m -Xmx512m&quot;</code>：内存大小</li>
+<li><code>-e &quot;discovery.type=single-node&quot;</code>：非集群模式</li>
+<li><code>-v es-data:/usr/share/elasticsearch/data</code>：挂载逻辑卷，绑定es的数据目录</li>
+<li><code>-v es-logs:/usr/share/elasticsearch/logs</code>：挂载逻辑卷，绑定es的日志目录</li>
+<li><code>-v es-plugins:/usr/share/elasticsearch/plugins</code>：挂载逻辑卷，绑定es的插件目录</li>
+<li><code>--privileged</code>：授予逻辑卷访问权</li>
+<li><code>--network es-net</code> ：加入一个名为es-net的网络中</li>
+<li><code>-p 9200:9200</code>：端口映射配置</li>
+</ul>
+<h3 id="kibana部署"><a href="#kibana部署" class="headerlink" title="kibana部署"></a>kibana部署</h3><p>和elasticsearch部署步骤一样。</p>
+<ol>
+<li>先加载镜像，**(镜像我放到了网盘里，链接在上方)**</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker load -i es.tar</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>运行docker命令，部署kibana</li>
+</ol>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">docker run -d \</span><br><span class="line">--name kibana \</span><br><span class="line">-e ELASTICSEARCH_HOSTS=http://es:9200 \</span><br><span class="line">--network=es-net \</span><br><span class="line">-p 5601:5601  \</span><br><span class="line">kibana:7.12.1</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>--network es-net</code> ：加入一个名为es-net的网络中，与elasticsearch在同一个网络中</li>
+<li><code>-e ELASTICSEARCH_HOSTS=http://es:9200&quot;</code>：设置elasticsearch的地址，因为kibana已经与elasticsearch在一个网络，因此可以用容器名直接访问elasticsearch</li>
+<li><code>-p 5601:5601</code>：端口映射配置</li>
+</ul>
+<h3 id="安装ik分词器"><a href="#安装ik分词器" class="headerlink" title="安装ik分词器"></a>安装ik分词器</h3><ol>
+<li>安装插件需要知道elasticsearch的plugins目录位置，而我们用了数据卷挂载，因此需要查看elasticsearch的数据卷目录，通过下面命令查看:</li>
+</ol>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker volume inspect es-plugins</span><br></pre></td></tr></table></figure>
+
+<p>显示结果：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">[</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;CreatedAt&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2022-05-06T10:06:34+08:00&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;Driver&quot;</span><span class="punctuation">:</span> <span class="string">&quot;local&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;Labels&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">null</span></span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;Mountpoint&quot;</span><span class="punctuation">:</span> <span class="string">&quot;/var/lib/docker/volumes/es-plugins/_data&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;Name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;es-plugins&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;Options&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">null</span></span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;Scope&quot;</span><span class="punctuation">:</span> <span class="string">&quot;local&quot;</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">]</span></span><br></pre></td></tr></table></figure>
+
+<p>说明plugins目录被挂载到了：<code>/var/lib/docker/volumes/es-plugins/_data </code>这个目录中。</p>
+<ol start="2">
+<li><p>在本地解压ik分词器压缩包，重命名为ik（<strong>压缩包放到了网盘，链接在上方</strong>）</p>
+</li>
+<li><p>上传到es容器的插件数据卷中，也就是<code>/var/lib/docker/volumes/es-plugins/_data </code></p>
+</li>
+<li><p>重启容器</p>
+</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">4、重启容器</span></span><br><span class="line">docker restart es</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看es日志</span></span><br><span class="line">docker logs -f es</span><br></pre></td></tr></table></figure>
+
+<h3 id="前端项目部署"><a href="#前端项目部署" class="headerlink" title="前端项目部署"></a>前端项目部署</h3><p>打包后,直接部署到nginx上，server配置如下</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">server</span></span><br><span class="line">   &#123;</span><br><span class="line">       <span class="attribute">listen</span> <span class="number">8000</span>;</span><br><span class="line">       <span class="attribute">server_name</span> localhost;</span><br><span class="line">       <span class="attribute">include</span> enable-php.conf;</span><br><span class="line"> </span><br><span class="line">      <span class="section">location</span> / &#123;</span><br><span class="line">           <span class="attribute">root</span>   search-frontend/dist;   <span class="comment"># 你的dist存放的目录</span></span><br><span class="line">           <span class="attribute">index</span>  index.html index.htm;</span><br><span class="line">           <span class="attribute">try_files</span> <span class="variable">$uri</span> /index.html;</span><br><span class="line">       &#125;</span><br><span class="line">     </span><br><span class="line">       <span class="section">location</span> /api &#123;</span><br><span class="line">           <span class="attribute">proxy_pass</span> http://locahost:8101;  <span class="comment">#你的后端的地址</span></span><br><span class="line">       &#125;       </span><br><span class="line">    </span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="后端项目部署"><a href="#后端项目部署" class="headerlink" title="后端项目部署"></a>后端项目部署</h3><ol>
+<li>编写Dockerfile文件</li>
+</ol>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">FROM</span> openjdk:<span class="number">8</span></span><br><span class="line"><span class="keyword">COPY</span><span class="language-bash"> ./search-backend.jar /tmp/search-backend.jar</span></span><br><span class="line"><span class="keyword">EXPOSE</span> <span class="number">8101</span></span><br><span class="line"><span class="keyword">ENTRYPOINT</span><span class="language-bash"> java -jar -Duser.timezone=GMT+08  /tmp/search-backend.jar</span></span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>构建镜像</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker build -f Dockerfile -t search-backend .</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>运行容器</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -id --name=search-backend -p 8101:8101 --add-host host.docker.internal:host-gateway search-backend</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意：如果使用docker部署，locahost访问的不是宿主机，而是容器。需要将配置文件application.yml中的 localhost 替换成 host.docker.internal  </p>
+<p>然后运行容器时添加命令： –add-host host.docker.internal:host-gateway</p>
+</blockquote>
+<p>参考:</p>
+<img src="C:\Users\少年\AppData\Roaming\Typora\typora-user-images\image-20230521151157993.png" class="lazyload" data-srcset="C:\Users\少年\AppData\Roaming\Typora\typora-user-images\image-20230521151157993.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20230521151157993" style="zoom: 67%;" align="left"/>
   </div>
   
   
@@ -2264,7 +2354,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-05-24T01:22:06+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-05-24T16:28:53+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：May 24, 2023</p>
@@ -2293,13 +2383,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/2023/05/24/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E4%BF%9D%E5%AD%98%E9%A1%B5%E9%9D%A2%E7%8A%B6%E6%80%81/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>前端开发保存路由的方法</p>
-          <p class='content'>前端开发用url记录搜索状态，当页面刷新时，能够从url还原之前的搜索状态
-技巧:把同步状态改成单项，运行url来改变页面状态，不允许反向
-1，让用户在操作的时候，改变url地址（点击搜索框，搜...</p>
-        </a>
       
+        <a class='next' href='/2023/05/24/%E5%BF%83%E5%BE%97%E4%BD%93%E4%BC%9A/'>
+          <p class='title'>web竞赛的一些经验（前端）<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>赛前准备👌
+需要具备的基本技术
+vue： 比赛拿到的项目里移动端项目为vue2技术，而pc端项目为vue3项目，学会vue2后vue3基本可以在一个月之内简单上手
+vuex ：状态管理模式，比...</p>
+        </a>
       
     </div>
   
@@ -2348,7 +2439,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
   <div class='content'>
-      
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%EF%BC%88docker%E9%83%A8%E7%BD%B2%EF%BC%89"><span class="toc-number">1.</span> <span class="toc-text">项目部署（docker部署）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#elasticsearch%E9%83%A8%E7%BD%B2"><span class="toc-number">1.1.</span> <span class="toc-text">elasticsearch部署</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#kibana%E9%83%A8%E7%BD%B2"><span class="toc-number">1.2.</span> <span class="toc-text">kibana部署</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85ik%E5%88%86%E8%AF%8D%E5%99%A8"><span class="toc-number">1.3.</span> <span class="toc-text">安装ik分词器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%89%8D%E7%AB%AF%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2"><span class="toc-number">1.4.</span> <span class="toc-text">前端项目部署</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%8E%E7%AB%AF%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2"><span class="toc-number">1.5.</span> <span class="toc-text">后端项目部署</span></a></li></ol></li></ol>
   </div>
 </section>
 
@@ -3002,7 +3093,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"chen","url":"https://chen28176.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"chen28176","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://chen28176.github.io/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://chen28176.github.io/","name":"chen"}},{"@type":"ListItem","position":3,"item":{"@id":"https://chen28176.github.io/2023/05/23/hello-world/","name":"Hello World"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"chen","url":"https://chen28176.github.io/","keywords":null,"description":"","author":{"@type":"Person","name":"chen28176","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://chen28176.github.io/","description":""},"publisher":{"@type":"Organization","name":"chen","url":"https://chen28176.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://chen28176.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"Hello World","description":"","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https://chen28176.github.io/2023/05/23/hello-world/"},"author":{"@type":"Person","name":"chen28176","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://chen28176.github.io/"},"publisher":{"@type":"Organization","name":"chen","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://chen28176.github.io/2023/05/23/hello-world/","wordCount":0,"datePublished":"2023-05-23T11:37:58.804Z","dateModified":"2023-05-23T17:22:06.559Z","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"chen","url":"https://chen28176.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"chen28176","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://chen28176.github.io/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://chen28176.github.io/","name":"chen"}},{"@type":"ListItem","position":3,"item":{"@id":"https://chen28176.github.io/2023/05/24/聚合搜索平台项目部署/","name":"平台部署"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"chen","url":"https://chen28176.github.io/","keywords":null,"description":"","author":{"@type":"Person","name":"chen28176","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://chen28176.github.io/","description":""},"publisher":{"@type":"Organization","name":"chen","url":"https://chen28176.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://chen28176.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"平台部署","description":"","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https://chen28176.github.io/2023/05/24/%E8%81%9A%E5%90%88%E6%90%9C%E7%B4%A2%E5%B9%B3%E5%8F%B0%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2/"},"author":{"@type":"Person","name":"chen28176","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://chen28176.github.io/"},"publisher":{"@type":"Organization","name":"chen","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://chen28176.github.io/2023/05/24/%E8%81%9A%E5%90%88%E6%90%9C%E7%B4%A2%E5%B9%B3%E5%8F%B0%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2/","wordCount":0,"datePublished":"2023-05-24T08:28:35.383Z","dateModified":"2023-05-24T08:28:53.190Z","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+
+
 
 
 
@@ -3015,3 +3108,15 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <!-- Custom Files bodyEnd end-->
   </body>
 </html>
+
+
+<script type="text/javascript">
+  var OriginTitile = document.title,
+      st;
+  document.addEventListener("visibilitychange", function () {
+      document.hidden ? (document.title = "拜拜", clearTimeout(st)) : (document.title =
+          "欢迎", st = setTimeout(function () {
+              document.title = OriginTitile
+          }, 3e3))
+  })
+</script>      

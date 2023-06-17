@@ -1,0 +1,218 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>项目难点二，动态菜单 | chen</title><meta name="author" content="chen"><meta name="copyright" content="chen"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="一，概念实际开发项目中有很多的路由页面，所以动态菜单不能写死，应该更加灵活的渲染，让路由来决定菜单有多少，这里使用了递归组件进行递归组件是一种的组件，他在自身模板中调用自己，这种结构组件可以说很方便地处理具有嵌套层次关系的数据。 常见应用场景  数状结构展示:递归组件可以用来展示树状结构的数据，比如文件结构，评论列表等，通过递归组件调用自身，可以很容易地处理多层嵌套的数据，使得代码更加简洁清晰。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="项目难点二，动态菜单">
+<meta property="og:url" content="https://chen28176.github.io/2023/06/17/%E9%80%92%E5%BD%92%E7%BB%84%E4%BB%B6/index.html">
+<meta property="og:site_name" content="chen">
+<meta property="og:description" content="一，概念实际开发项目中有很多的路由页面，所以动态菜单不能写死，应该更加灵活的渲染，让路由来决定菜单有多少，这里使用了递归组件进行递归组件是一种的组件，他在自身模板中调用自己，这种结构组件可以说很方便地处理具有嵌套层次关系的数据。 常见应用场景  数状结构展示:递归组件可以用来展示树状结构的数据，比如文件结构，评论列表等，通过递归组件调用自身，可以很容易地处理多层嵌套的数据，使得代码更加简洁清晰。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://chen28176.github.io/img/22.png">
+<meta property="article:published_time" content="2023-06-17T05:00:00.000Z">
+<meta property="article:modified_time" content="2023-06-17T08:28:14.579Z">
+<meta property="article:author" content="chen">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://chen28176.github.io/img/22.png"><link rel="shortcut icon" href="/img/fav.png"><link rel="canonical" href="https://chen28176.github.io/2023/06/17/%E9%80%92%E5%BD%92%E7%BB%84%E4%BB%B6/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '项目难点二，动态菜单',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-06-17 16:28:14'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "/img/friend_404.gif" data-lazy-src="/img/22.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">8</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg fixed" id="page-header" style="background-image: url('/img/indexBg.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="chen"><span class="site-name">chen</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">项目难点二，动态菜单</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-06-17T05:00:00.000Z" title="发表于 2023-06-17 13:00:00">2023-06-17</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-06-17T08:28:14.579Z" title="更新于 2023-06-17 16:28:14">2023-06-17</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86%E9%A1%B9%E7%9B%AE/">后台管理项目</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="项目难点二，动态菜单"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="一，概念"><a href="#一，概念" class="headerlink" title="一，概念"></a>一，概念</h2><p>实际开发项目中有很多的路由页面，所以动态菜单不能写死，应该更加灵活的渲染，让路由来决定菜单有多少，这里使用了递归组件进行<br>递归组件是一种的组件，他在自身模板中调用自己，这种结构组件可以说很方便地处理具有嵌套层次关系的数据。</p>
+<p>常见应用场景</p>
+<ul>
+<li>数状结构展示:递归组件可以用来展示树状结构的数据，比如文件结构，评论列表等，通过递归组件调用自身，可以很容易地处理多层嵌套的数据，使得代码更加简洁清晰。</li>
+<li>无限滚动列表：当需要实现一个无线滚动列表时，通过递归地渲染每一行数据，可以实现不断加载数据并展示在列表中的效果，提供更好的用户体验。</li>
+<li>导航菜单：对于导航菜单中的多级菜单，通过递归地渲染每个菜单项以及它们的子菜单，可以实现动态生成多级导航菜单的功能</li>
+</ul>
+<h2 id="二，实现思路"><a href="#二，实现思路" class="headerlink" title="二，实现思路"></a>二，实现思路</h2><p>准备</p>
+<ul>
+<li>创建菜单单项组件：定义一个用于显示单独菜单项的组件</li>
+<li>定义菜单数据结构：创建一个存储菜单数据的数据结构，包括唯一标识和子菜单项</li>
+<li>创建递归组件：在组件的template中使用组件自身，用于渲染多级菜单</li>
+<li>处理递归终止的条件：定义递归终止的条件，例如当菜单项没有子菜单项时停止递归。</li>
+<li>渲染菜单：在父组件中使用递归组件并传递菜单数据，来动态生成整个菜单</li>
+</ul>
+<p>开始</p>
+<ul>
+<li>将路由信息进行暴露</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> constantRoute = [</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">path</span>: <span class="string">&#x27;/login&#x27;</span>,</span><br><span class="line">    <span class="attr">component</span>: <span class="function">() =&gt;</span> <span class="keyword">import</span>(<span class="string">&#x27;@/views/login/index.vue&#x27;</span>),</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&#x27;login&#x27;</span>,</span><br><span class="line">    <span class="attr">meta</span>: &#123;</span><br><span class="line">      <span class="attr">title</span>: <span class="string">&#x27;登录&#x27;</span>, <span class="comment">//菜单标题</span></span><br><span class="line">      <span class="attr">hidden</span>: <span class="literal">true</span>, <span class="comment">//代表路由标题在菜单中是否隐藏  true:隐藏 false:不隐藏</span></span><br><span class="line">      <span class="attr">icon</span>: <span class="string">&#x27;Promotion&#x27;</span>, <span class="comment">//菜单文字左侧的图标,支持element-plus全部图标</span></span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    ...</span><br><span class="line">  &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>接着创建pinia仓库, 引入路由信息</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">  <span class="keyword">import</span> &#123; constantRoute, asnycRoute, anyRoute &#125; <span class="keyword">from</span> <span class="string">&#x27;@/router/routes&#x27;</span> <span class="string">``</span><span class="string">`</span></span><br><span class="line"><span class="string">  </span></span><br><span class="line"><span class="string">- 创建用户小仓库，并在仓库中添加存储生成菜单需要的数组路由 menuRoutes  `</span><span class="string">``</span>javascript</span><br><span class="line">  <span class="comment">//创建用户小仓库</span></span><br><span class="line">  <span class="keyword">const</span> useUserStore = <span class="title function_">defineStore</span>(<span class="string">&#x27;User&#x27;</span>, &#123;</span><br><span class="line">  <span class="comment">//小仓库存储数据地方</span></span><br><span class="line">    <span class="attr">state</span>: (): <span class="function"><span class="params">UserState</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> &#123;</span><br><span class="line">        <span class="attr">token</span>: <span class="title function_">GET_TOKEN</span>(), <span class="comment">//用户唯一标识token</span></span><br><span class="line">        <span class="attr">menuRoutes</span>: constantRoute, <span class="comment">//仓库存储生成菜单需要数组(路由)</span></span><br><span class="line">        <span class="attr">username</span>: <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">        <span class="attr">avatar</span>: <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">        <span class="comment">//存储当前用户是否包含某一个按钮</span></span><br><span class="line">        <span class="attr">buttons</span>: [],</span><br><span class="line">         &#125;,</span><br><span class="line">      &#125;,</span><br><span class="line">    &#125;,</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>接着在引入到vue页面中</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> userUserStore <span class="keyword">from</span> <span class="string">&#x27;@/store/modules/user&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>引入组件并进行父子传递</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">Menu</span> <span class="keyword">from</span> <span class="string">&#x27;./menu/index.vue&#x27;</span></span><br><span class="line"></span><br><span class="line"> &lt;!-- 根据路由动态生成菜单 --&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">Menu</span> <span class="attr">:menuList</span>=<span class="string">&quot;userStore.menuRoutes&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">Menu</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<p>来到子组件页面，接受组件传递的信息</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="title class_">Menu</span> :menuList=<span class="string">&quot;item.children&quot;</span>&gt;&lt;/<span class="title class_">Menu</span>&gt;</span><br><span class="line"><span class="comment">//获取父组件传递过来的全部路由数组</span></span><br><span class="line"><span class="title function_">defineProps</span>([<span class="string">&#x27;menuList&#x27;</span>])</span><br></pre></td></tr></table></figure>
+
+<p>接着便是渲染菜单了，一般有三种情况</p>
+<p>1，没有子菜单则直接渲染 –没有子路由</p>
+<p>2，有子菜单 – 有子路由但是只有一个子路由</p>
+<p>3，循环渲染子菜单时要判断是否又包含子菜单，如果包含则调用自身组件递归渲染 – 有子路由且个数大于1</p>
+<p>前两个使用了v-if 第三个使用了递归组件</p>
+<p>完整代码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;template v-for=&quot;(item, index) in menuList&quot; :key=&quot;item.path&quot;&gt;</span><br><span class="line">    &lt;!--没有子路由--&gt;</span><br><span class="line">    &lt;template v-if=&quot;!item.children&quot;&gt;</span><br><span class="line">      &lt;el-menu-item</span><br><span class="line">        :index=&quot;item.path&quot;</span><br><span class="line">        v-if=&quot;!item.meta.hidden&quot;</span><br><span class="line">        @click=&quot;goRoute&quot;</span><br><span class="line">      &gt;</span><br><span class="line">        &lt;el-icon&gt;</span><br><span class="line">          &lt;component :is=&quot;item.meta.icon&quot;&gt;&lt;/component&gt;</span><br><span class="line">        &lt;/el-icon&gt;</span><br><span class="line">        &lt;template #title&gt;</span><br><span class="line">          &lt;span&gt;&#123;&#123; item.meta.title &#125;&#125;&lt;/span&gt;</span><br><span class="line">        &lt;/template&gt;</span><br><span class="line">      &lt;/el-menu-item&gt;</span><br><span class="line">    &lt;/template&gt;</span><br><span class="line">    &lt;!-- 有子路由但是只有一个子路由 --&gt;</span><br><span class="line">    &lt;template v-if=&quot;item.children &amp;&amp; item.children.length == 1&quot;&gt;</span><br><span class="line">      &lt;el-menu-item</span><br><span class="line">        :index=&quot;item.children[0].path&quot;</span><br><span class="line">        v-if=&quot;!item.children[0].meta.hidden&quot;</span><br><span class="line">        @click=&quot;goRoute&quot;</span><br><span class="line">      &gt;</span><br><span class="line">        &lt;el-icon&gt;</span><br><span class="line">          &lt;component :is=&quot;item.children[0].meta.icon&quot;&gt;&lt;/component&gt;</span><br><span class="line">        &lt;/el-icon&gt;</span><br><span class="line">        &lt;template #title&gt;</span><br><span class="line">          &lt;span&gt;&#123;&#123; item.children[0].meta.title &#125;&#125;&lt;/span&gt;</span><br><span class="line">        &lt;/template&gt;</span><br><span class="line">      &lt;/el-menu-item&gt;</span><br><span class="line">    &lt;/template&gt;</span><br><span class="line">    &lt;!-- 有子路由且个数大于一个1 --&gt;</span><br><span class="line">    &lt;el-sub-menu</span><br><span class="line">      :index=&quot;item.path&quot;</span><br><span class="line">      v-if=&quot;item.children &amp;&amp; item.children.length &gt; 1&quot;</span><br><span class="line">    &gt;</span><br><span class="line">      &lt;template #title&gt;</span><br><span class="line">        &lt;el-icon&gt;</span><br><span class="line">          &lt;component :is=&quot;item.meta.icon&quot;&gt;&lt;/component&gt;</span><br><span class="line">        &lt;/el-icon&gt;</span><br><span class="line">        &lt;span&gt;&#123;&#123; item.meta.title &#125;&#125;&lt;/span&gt;</span><br><span class="line">      &lt;/template&gt;</span><br><span class="line">      &lt;Menu :menuList=&quot;item.children&quot;&gt;&lt;/Menu&gt;</span><br><span class="line">    &lt;/el-sub-menu&gt;</span><br><span class="line">  &lt;/template&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script setup lang=&quot;ts&quot;&gt;</span><br><span class="line">import &#123; useRouter &#125; from &#x27;vue-router&#x27;</span><br><span class="line">//获取父组件传递过来的全部路由数组</span><br><span class="line">defineProps([&#x27;menuList&#x27;])</span><br><span class="line"></span><br><span class="line">//获取路由器对象</span><br><span class="line">let $router = useRouter()</span><br><span class="line">//点击菜单的回调</span><br><span class="line">const goRoute = (vc: any) =&gt; &#123;</span><br><span class="line">  //路由跳转</span><br><span class="line">  $router.push(vc.index)</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;script lang=&quot;ts&quot;&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  name: &#x27;Menu&#x27;,</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>这里写了第二个script 进行循环嵌套</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;script lang=<span class="string">&quot;ts&quot;</span>&gt;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;Menu&#x27;</span>,</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>并在页面中调用自己</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;el-sub-menu :index=<span class="string">&quot;item.path&quot;</span> v-<span class="keyword">if</span>=<span class="string">&quot;item.children &amp;&amp; item.children.length &gt; 1&quot;</span>&gt;</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">template</span> #<span class="attr">title</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">el-icon</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">component</span> <span class="attr">:is</span>=<span class="string">&quot;item.meta.icon&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">component</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;/<span class="name">el-icon</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">span</span>&gt;</span>&#123;&#123; item.meta.title &#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">template</span>&gt;</span></span></span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">Menu</span> <span class="attr">:menuList</span>=<span class="string">&quot;item.children&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">Menu</span>&gt;</span></span></span><br><span class="line">  &lt;/el-sub-menu&gt;</span><br></pre></td></tr></table></figure>
+
+<p>当进入前两个条件不满足是，会去到第三个进行递归 ,无限递归</p>
+</article><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2023/05/30/%E8%B7%83%E5%8A%A8%E9%9D%92%E6%98%A5/" title="跃动青春"><img class="cover" src= "/img/friend_404.gif" data-lazy-src="/./img/yuedong.webp" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">跃动青春</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "/img/friend_404.gif" data-lazy-src="/img/22.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">chen</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">8</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/chen28176"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">划水</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%EF%BC%8C%E6%A6%82%E5%BF%B5"><span class="toc-number">1.</span> <span class="toc-text">一，概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%EF%BC%8C%E5%AE%9E%E7%8E%B0%E6%80%9D%E8%B7%AF"><span class="toc-number">2.</span> <span class="toc-text">二，实现思路</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/06/17/%E9%80%92%E5%BD%92%E7%BB%84%E4%BB%B6/" title="项目难点二，动态菜单">项目难点二，动态菜单</a><time datetime="2023-06-17T05:00:00.000Z" title="发表于 2023-06-17 13:00:00">2023-06-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/05/30/%E8%B7%83%E5%8A%A8%E9%9D%92%E6%98%A5/" title="跃动青春"><img src= "/img/friend_404.gif" data-lazy-src="/./img/yuedong.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="跃动青春"/></a><div class="content"><a class="title" href="/2023/05/30/%E8%B7%83%E5%8A%A8%E9%9D%92%E6%98%A5/" title="跃动青春">跃动青春</a><time datetime="2023-05-30T12:00:00.000Z" title="发表于 2023-05-30 20:00:00">2023-05-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/05/30/%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86%E7%AC%94%E8%AE%B0%20--%20%E5%8A%A8%E6%80%81%E8%8F%9C%E5%8D%95%E7%9A%84%E5%AE%9E%E7%8E%B0/" title="项目难点1">项目难点1</a><time datetime="2023-05-30T10:00:00.000Z" title="发表于 2023-05-30 18:00:00">2023-05-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/05/30/%E5%BF%83%E5%BE%97%E4%BD%93%E4%BC%9A/" title="web竞赛的一些经验（前端）">web竞赛的一些经验（前端）</a><time datetime="2023-05-29T17:35:00.000Z" title="发表于 2023-05-30 01:35:00">2023-05-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/05/23/%E8%81%9A%E5%90%88%E6%90%9C%E7%B4%A2%E5%B9%B3%E5%8F%B0%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2/" title="平台部署">平台部署</a><time datetime="2023-05-23T10:00:00.000Z" title="发表于 2023-05-23 18:00:00">2023-05-23</time></div></div></div></div></div></div></main><footer id="footer" style="background: #989898"><div id="footer-wrap"><div class="copyright">&copy;2023 By chen</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
